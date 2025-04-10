@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Montserrat:ital,wght@1,500&family=Roboto:wght@500&family=Shantell+Sans:wght@300&display=swap');
+
+// Reset & Font Setup
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Montserrat', 'Roboto', 'Shantell Sans', sans-serif;
+}
+
+$fontSizeBig: 1.8rem;
+
+@mixin flexCenter($fontSize: 1.2rem) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $fontSize;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+// Background Setup
+body {
+  overflow: hidden;
+  background-color: #e0f7fa;
+}
+
+.weatherContainer {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/weather.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+// Weather Box Card
+.weatherContainer__box {
+  width: 100%;
+  max-width: 350px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem;
+  color: #000;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+// Individual Sections
+.weatherContainer__city {
+  @include flexCenter(2rem);
+  font-weight: bold;
+}
+
+.weatherContainer__temp,
+.weatherContainer__temp__sky,
+.weatherContainer__wind {
+  @include flexCenter();
+  color: #000;
+}
+
+.weatherContainer__temp i,
+.weatherContainer__temp__sky i,
+.weatherContainer__wind i {
+  font-size: 1.5rem;
+  color: #000;
+}

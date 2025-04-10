@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-backend
+  template:
+    metadata:
+      labels:
+        app: weather-backend
+    spec:
+      containers:
+      - name: backend
+        image: weather-api-main-backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: API_KEY
+          value: "248d369aa6322178f4f2620b2da7f29c"

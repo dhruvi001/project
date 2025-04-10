@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Montserrat:ital,wght@1,500&family=Roboto:wght@500&family=Shantell+Sans:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background-color: #e0f7fa;
+}
+
+.weatherContainer {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/weather.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.weatherContainer__box {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 20px;
+  color: #000;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.weatherContainer__city {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Shared styles for sections */
+.weatherContainer__temp,
+.weatherContainer__temp__sky,
+.weatherContainer__wind {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+/* Icon styling */
+.weatherContainer__temp i,
+.weatherContainer__temp__sky i,
+.weatherContainer__wind i {
+  font-size: 1.5rem;
+  color: #000;
+}
+
+/* Clouds */
+.clouds {
+  position: absolute;
+  width: 10vw;
+  height: auto;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.one {
+  left: 20vw;
+  animation: cloudsRun 53s infinite linear;
+}
+
+.two {
+  top: 29vh;
+  left: -10vw;
+  animation: cloudsRun 53s infinite linear;
+}
+
+.three {
+  right: 30vw;
+  animation: cloudsRun 53s infinite linear;
+}
+
+.four {
+  top: 50vh;
+  right: 30vw;
+  animation: cloudsRun 53s infinite linear;
+}
+
+@keyframes cloudsRun {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(70vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.manualInput {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: rgba(155, 191, 253, 0.4); /* Dark semi-transparent background */
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 12px 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  
+}
+
+.manualInput input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  color:  rgba(19, 17, 17, 0.7);
+  font-size: 1rem;
+  flex: 1 1 200px;
+  min-width: 180px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.manualInput input::placeholder {
+  color: rgba(19, 17, 17, 0.7);
+}
+
+.manualInput input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  border-color: #90caf9;
+}
+
+.manualInput button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #bdc3c7, #2c3e50);
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 60;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.manualInput button:hover {
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+  transform: scale(1.03);
+}
+.weatherContainer {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #cceeff, #e0f7fa); /* soft sky blue gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+  
+}
+
+/* Manual Input Card */
+.manualInput.card {
+  flex: 1 1 350px;
+  max-width: 450px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  
+}
+
+.manualInput.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Buttons & Input */
+.manualInput.card input,
+.manualInput.card button {
+  width: 100%;
+}
+
+.manualInput.card input {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.manualInput.card input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.manualInput.card button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #1e88e5, #42a5f5);
+  color: white;
+  font-weight: 0px;
+  cursor: pointer;
+  transition: 0.3s ease, transform 0.2s ease;
+}
+
+.manualInput.card button:hover {
+  background: linear-gradient(to right, #1565c0, #1e88e5);
+  transform: scale(1.03);
+}
+
+/* Weather Info Card */
+.weatherContainer__box {
+  flex: 1 1 350px;
+  max-width: 450px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Inner elements */
+.weatherContainer__city {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.weatherContainer__temp,
+.weatherContainer__temp__sky,
+.weatherContainer__wind {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.weatherContainer__box i {
+  font-size: 1.5rem;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  .card-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .manualInput.card,
+  .weatherContainer__box {
+    width: 90%;
+  }
+}

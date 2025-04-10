@@ -1,0 +1,12 @@
+# Compile SCSS before serving
+FROM node:18-alpine AS builder
+WORKDIR /app
+RUN npm install -g sass
+COPY style.scss .
+RUN mkdir -p css && sass style.scss css/style.css
+
+# Serve static files with nginx
+FROM nginx:alpine
+COPY --from=builder /app/css/style.css /usr/share/nginx/html/css/style.css
+COPY . /usr/share/nginx/html
+EXPOSE 80

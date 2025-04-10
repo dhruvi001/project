@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Background Clouds -->
+  <div class="clouds one"><img src="./img/cloud.png" alt="cloud background" /></div>
+  <div class="clouds two"><img src="./img/cloud.png" alt="cloud background" /></div>
+  <div class="clouds three"><img src="./img/cloud.png" alt="cloud background" /></div>
+  <div class="clouds four"><img src="./img/cloud.png" alt="cloud background" /></div>
+
+  <!-- Weather Box -->
+  <div class="manualInput">
+    <input type="text" id="cityInput" placeholder="Enter city name..." />
+    <button onclick="fetchCityWeather()">Check Weather</button>
+    <button onclick="getCurrentLocationWeather()" class="current-btn">Use My Current Location</button>
+  </div>
+  
+  
+  <div class="weatherContainer">
+    
+    <div class="weatherContainer__box">
+      <div class="weatherContainer__city">
+        Loading data...
+      </div>
+      <div class="weatherContainer__temp">
+        <i class="fa-solid fa-temperature-quarter fa-xl"></i>
+        <span class="weatherContainer__temp__temp">Loading...</span>
+      </div>
+      <div class="weatherContainer__temp__sky">
+        <i class="fa-solid fa-cloud"></i>
+        <span class="weatherContainer__sky__description">Loading...</span>
+      </div>
+      <div class="weatherContainer__wind">
+        <i class="fa-solid fa-wind fa-xl"></i>
+        <span class="weatherContainer__wind__data">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
