@@ -1,8 +1,8 @@
 frontend:
-  image: 0928743/weather-api-main-frontend
+  image: 0928743/weather-api-main-frontend:latest
   port: 80
 
 backend:
-  image: 0928743/weather-api-main-backend
+  image: 0928743/weather-api-main-backend:latest
   port: 5000
   apiKey: "248d369aa6322178f4f2620b2da7f29c"
